@@ -117,7 +117,7 @@ node ./scripts/generate.cjs
 success "Generated files.json"
 
 section "Generating UUID"
-uuidgen >./build/uuid
+UUID=$(node -e "console.log(require('crypto').randomUUID())")
 
 rm -rf ./dist/ ./dist-transport/ ./dist-sw/ ./apps/
 
