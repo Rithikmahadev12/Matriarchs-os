@@ -1,4 +1,4 @@
-import WebSocket from 'ws';
+import { WebSocketServer } from "ws";
 import fs from 'fs';
 import path from 'path';
 
@@ -46,7 +46,7 @@ class P2PSignalingServer {
         }
 
         if (!this.wss) {
-            this.wss = new WebSocket.Server({ noServer: true });
+            this.wss = new WebSocketServer({ noServer: true });
             this.setupWebSocketServer(logging);
             
             if (!this.cleanupInterval) {
